@@ -2,7 +2,7 @@
 
 // Layers can only be used one at a time unless using a fusion table.
 var setTrafficLayer = false;
-var setBicycleLayer = false;
+var setBicycleLayer = true;
 
 
 // Coords for UCCS Engineering Building
@@ -78,7 +78,7 @@ function initialize()	{
 // Handle error with not finding a Geolocation.
 function handleNoGeolocation(errorFlag)	{
 	if (errorFlag)	{
-		var content = 'Error: Geolocation has failed. Please use search box D=';
+		var content = '';
 	}
 	else {
 		var content = 'Error: Your browser doesn\'t support geolocation';
