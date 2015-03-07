@@ -50,14 +50,13 @@ function initialize()	{
 	//Try HTML5 Geolocation
 	if(navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(function(position) {
-			var pos = new google.maps.LatLang(position.coords.latitude,
-											  position.coords.longitude);
+			var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
-			var infowindow = new google.maps.InfoWindow({
+			/*var infowindow = new google.maps.InfoWindow({
 				map: map,
 				position: pos,
-				content: 'Location found using HTML5'
-			})
+				content: ''
+			})*/
 
 			map.setCenter(pos);
 		}, function(){
@@ -90,7 +89,7 @@ function handleNoGeolocation(errorFlag)	{
 		content: content 
 	};
 
-	var infowindow = new google.maps.InfoWindow(mapOptions);
+	//var infowindow = new google.maps.InfoWindow(mapOptions);
 	map.setCenter(mapOptions.position)
 }
 
