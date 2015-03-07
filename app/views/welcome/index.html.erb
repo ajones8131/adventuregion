@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
-	<meta name="viewport" content="initial-scale=1.0, user-scalable = no"/>
-	<meta charset = "utf-8">
-	<title>AdventuRegion</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable = no"/>
+    <meta charset = "utf-8">
+    <title>AdventuRegion</title>
+    <%= stylesheet_link_tag "index.css" %>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.18&amp;signed_in=true&amp;key=AIzaSyADvF-y97cxOzHCKo63NRWOaTQob13CUaw"></script>
+    <script src="maps.js"></script>
+  </head>
+
   <body>
-  <input type="text" placeholder="location"></input><button type="button">submit</input>
-	<img src="http://i.imgur.com/Kw7CJTj.png" alt="TitlePlaceholder" style="width:100%; height:100px;">
-
-	<%= stylesheet_link_tag "index.css" %>
-
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.18&amp;signed_in=true&amp;key=AIzaSyADvF-y97cxOzHCKo63NRWOaTQob13CUaw">		
-	</script>
-  	<script src="maps.js"></script>
-
-		<div id = "map-canvas" style="width: 100%; height: 100%"></div>
+    <img src="http://i.imgur.com/Kw7CJTj.png" alt="TitlePlaceholder" style="width:100%; height:100px;">
+    <input type="text" placeholder="location"></input><button type="button">submit</button>
+    <div id = "map-canvas" style="width: 100%; height: 100%"></div>
 	</body>
+
 </html>
