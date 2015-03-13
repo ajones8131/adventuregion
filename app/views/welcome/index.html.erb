@@ -8,7 +8,7 @@
         height: 400px;
       }
       #titlebar{
-        width: auto
+        position: float;
         float: left
       }
       #nav {
@@ -37,14 +37,13 @@
    #nav li a:hover {
       color: #c00;
       background-color: #fff; }
-
     </style>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script>
       function initialize() {
         var mapCanvas = document.getElementById('map-canvas');
         var mapOptions = {
-          center: new google.maps.LatLng(44.5403, -78.5463),
+          center: new google.maps.LatLng( 38.8673, -104.7607),
           zoom: 8,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         }
@@ -56,15 +55,15 @@
   
   <body>
     <div id="titlebar">
-      <img src=http://i.imgur.com/fpbjySk.png alt="TitlePlaceholder">
+      <img   src=http://i.imgur.com/fpbjySk.png alt="TitlePlaceholder">
     </div>
 <div id="nav">
    <ul>
       <li><a href="#">About Us</a></li>
-      <li><a href="#">Our Products</a></li>
-      <li><a href="#">FAQs</a></li>
+      <li><a href="#">Our Prices</a></li>
+      <li><a href="#">Adventure Planner</a></li>
       <li><a href="#">Contact</a></li>
-      <li><a href="#">Login</a></li>
+      <li><a href="login.html">Login</a></li>
    </ul>
 </div>
    <h1>Find your Adventure at AdventuRegion </h1>
