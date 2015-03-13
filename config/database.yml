@@ -38,10 +38,12 @@ development:
   <<: *connection
   database: dbname_development
 
-test:
+test: &test
   <<: *connection
   database: dbname_test
 
 production:
   <<: *connection
   database: dbname_production
+cucumber:
+  <<: *test
