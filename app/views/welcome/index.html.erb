@@ -1,34 +1,53 @@
 <!DOCTYPE html>
+
 <html>
-  <head>
+<head>
     <title>AdventuRegion</title>
-    <style>
 
-
-    </style>
     <%= stylesheet_link_tag "index.css" %>
+    <%= stylesheet_link_tag "gplaces.css" %>
+  
     <script src="https://maps.googleapis.com/maps/api/js?v=3.18&amp;libraries=places&amp;key=AIzaSyADvF-y97cxOzHCKo63NRWOaTQob13CUaw"></script>
     <%= javascript_include_tag "maps.js" %>
-  </head>
-  
-  <body>
+
+</head>
+
+<body>
     <div id="titlebar">
-      <img src=http://i.imgur.com/fpbjySk.png alt="TitlePlaceholder">
+        <img src=http://i.imgur.com/fpbjySk.png alt="TitlePlaceholder">
     </div>
-<div id="nav">
-   <ul>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Our Products</a></li>
-      <li><a href="#">FAQs</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Login</a></li>
-   </ul>
-</div>
-   <h1>Find your Adventure at AdventuRegion </h1>
-   <p>This is a place to fing your adventure in your area. Please search for your location and start your adventure today.</p>
-    <input id = 'start' type= "text" placeholder= "Start Location"></input>
-    <input id = 'end' type= "text" placeholder= "End Location"></input>
-    <button type = "button" onclick = "maps:calcRoute();">submit</button>
-    <div id = "map-canvas"></div>
-  </body>
+    <div id="nav">
+        <ul>
+            <li><a href="#">About Us</a>
+            </li>
+            <li><a href="#">Our Products</a>
+            </li>
+            <li><a href="#">FAQs</a>
+            </li>
+            <li><a href="#">Contact</a>
+            </li>
+            <li><a href="#">Login</a>
+            </li>
+        </ul>
+    </div>
+
+    <h1>Find your Adventure at AdventuRegion </h1>
+
+    <p>This is a place to find your adventures around your area. Search for your location and start your adventure today!</p>
+
+    <input id='start' type="text" placeholder="Start Location"></input>
+    <input id='end' type="text" placeholder="End Location"></input>
+    <select id='selectMode'>
+        <option value="DRIVING">Driving</option>
+        <option value="WALKING">Walking</option>
+        <option value="BICYCLING">Bicycling</option>
+        <option value="TRANSIT">Transit</option>
+    </select>
+
+    <button type="button" onclick="maps:calcRoute();">submit</button>
+
+    <div id="map-canvas"></div>
+    <input id="places-input" class="controls" type="text" placeholder="Search for places">
+
+</body>
 </html>
