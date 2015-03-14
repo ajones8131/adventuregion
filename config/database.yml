@@ -8,18 +8,18 @@
 #   adapter: postgresql
 #   pool: 5
 #   timeout: 5000
-
+#
 # development:
 #   <<: *default
 #   database: db/development
-
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
+#
+## Warning: The database defined as "test" will be erased and
+## re-generated from your development database when you run "rake".
+## Do not set this db to the same as development or production.
 # test:
 #   <<: *default
 #   database: db/test
-
+#
 # production:
 #   <<: *default
 #   database: db/production
@@ -27,6 +27,7 @@
 
 
 # Testing to see if these settings work.
+<<<<<<< HEAD
 connection: &connection
   adapter: postgresql
   encoding: unicode
@@ -47,3 +48,23 @@ production:
   database: dbname_production
 cucumber:
   <<: *test
+=======
+  connection: &connection
+    adapter: postgresql
+    encoding: unicode
+    pool: 5
+    username: myapp
+    password: password
+
+  development:
+    <<: *connection
+    database: db/development
+
+  test:
+    <<: *connection
+    database: db/test
+
+  production:
+    <<: *connection
+    database: db/production
+>>>>>>> 9a3782cfd65b50be26393df0b635ef0e28a6504a
