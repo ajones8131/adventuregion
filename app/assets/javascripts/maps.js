@@ -1,6 +1,6 @@
 	// Coords for UCCS Engineering Building
-	var UCCSLat = 38.893659;
-	var UCCSLng = -104.800321;
+	var UCCSLat = 38.8936;
+	var UCCSLng = -104.8003;
 
 	// Variables for various functions
 	var map;
