@@ -87,8 +87,3 @@ end
 Then /^page should have (.+) message "([^\"]*)"$/ do |type, text|
   page.has_css?("p.#{type}", :text => text, :visible => true)
 end
-
-Then /^I see directions on map$/ do
-	 page.has_content? 'UCCS'
-	 page.has_content? 'Pikes Peak'
-end
