@@ -27,28 +27,6 @@
 
 
 # Testing to see if these settings work.
-<<<<<<< HEAD
-connection: &connection
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  username: username
-  password: tehpass
-
-development:
-  <<: *connection
-  database: dbname_development
-
-test: &test
-  <<: *connection
-  database: dbname_test
-
-production:
-  <<: *connection
-  database: dbname_production
-cucumber:
-  <<: *test
-=======
   connection: &connection
     adapter: postgresql
     encoding: unicode
@@ -67,4 +45,3 @@ cucumber:
   production:
     <<: *connection
     database: db/production
->>>>>>> 9a3782cfd65b50be26393df0b635ef0e28a6504a
