@@ -13,24 +13,8 @@
 </head>
 
 <body>
-    <div id="titlebar">
-        <img src=http://i.imgur.com/fpbjySk.png alt="TitlePlaceholder">
-    </div>
-    <div id="nav">
-        <ul>
-            <li><a href="#">About Us</a>
-            </li>
-            <li><a href="#">Prices</a>
-            </li>
-            <li><a href="#">Adventure Planner</a>
-            </li>
-            <li><a href="#">Contact</a>
-            </li>
-            <li><a href="#">Login</a>
-            </li>
-        </ul>
-    </div>
 
+    <%= render 'shared/navbar' %>
     <h1>Find your Adventure at AdventuRegion </h1>
 
     <p>This is a place to find your adventures around your area. Search for your location and start your adventure today!</p>
@@ -45,7 +29,6 @@
     </select>
 
     <button type="button" onclick="maps:calcRoute();">submit</button>
-
     <div id="map-canvas"></div>
     <input id="places-input" class="controls" type="text" placeholder="Search for places">
 
