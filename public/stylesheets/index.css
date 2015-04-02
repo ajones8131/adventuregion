@@ -1,11 +1,21 @@
+@import "bootstrap";
+
+@mixin box-sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 #map-canvas {
     width: 100%;
     height: 800px;
 }
+
 #titlebar {
     width: 100%;
     float: left
 }
+
 #nav {
     width: 100%;
     float: left;
@@ -14,15 +24,18 @@
     background-color: #f2f2f2;
     border-bottom: 1px solid #ccc;
 }
+
 #nav ul {
     list-style: none;
     width: 800px;
     margin: 0 auto;
     padding: 0;
 }
+
 #nav li {
     float: left;
 }
+
 #nav li a {
     display: block;
     padding: 8px 15px;
@@ -31,10 +44,39 @@
     color: #069;
     border-right: 1px solid #ccc;
 }
+
 #nav li:first-child a {
     border-left: 1px solid #ccc;
 }
+
 #nav li a:hover {
     color: #c00;
     background-color: #fff;
+}
+
+/* forms */
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box-sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extends .has_error;
+  .form-control {
+    color: $alert-danger;
+  }
 }
