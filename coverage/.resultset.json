@@ -1,0 +1,30 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/media/sf_ShareVM/group3/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/media/sf_ShareVM/group3/app/helpers/place_helper.rb": [
+        1,
+        null
+      ],
+      "/media/sf_ShareVM/group3/app/helpers/welcome_helper.rb": [
+        1,
+        null
+      ],
+      "/media/sf_ShareVM/group3/app/models/user.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1427979102
+  }
+}
