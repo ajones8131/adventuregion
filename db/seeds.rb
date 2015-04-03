@@ -5,3 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+places = [{:name => 'Pikes Peak' , :placeid => '1' , :type => 'Hiking', :price => 'low' , :popularity => 'medium'},
+      {:name =>  'Blodgett Peak', :placeid => '2', :type => 'Hiking', :price => 'free',  :popularity => 'low'},
+      {:name =>  'Mt Rosa', :placeid => '3', :type => 'Hiking', :price => 'free', :popularity => 'low'},
+      {:name =>  'Cheyenne Canyon', :placeid => '4', :type => 'Hiking', :price => 'free', :popularity => 'medium'},
+      {:name =>  'Go-kart Racing', :placeid => '5', :type => 'fun', :price => 'medium',  :popularity => 'high'},
+      {:name =>  'Harmony Bowl', :placeid => '6', :type => 'fun', :price => 'low', :popularity => 'high'},
+      {:name =>  'All-Star Paintball', :placeid => '7', :type => 'shooting', :price => 'medium', :popularity => 'high'},
+      {:name =>  'Dragonmans (shooting)', :placeid => '8', :type => 'shooting', :price => 'low', :popularity => 'high'},
+]
+
+places.each do |place|
+  Place.create!(place)
+end
