@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -11,15 +11,18 @@ Rails.application.routes.draw do
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-get "users/new"
+resources :users
+resources :sessions, only: [:new, :create, :destroy]
+
 root  to: 'welcome#index'
-match '/login',   to: 'welcome#login',    via:    'get'
-match '/signup',  to: 'users#new',        via:    'get'
+
 match '/about',   to: 'welcome#about',    via:    'get'
 match '/contact', to: 'welcome#contact',  via:    'get'
 match '/price',   to: 'welcome#price',    via:    'get'
-match '/planner',  to: 'welcome#planner', via:    'get'
-resources :users
+match '/planner', to: 'welcome#planner',  via:    'get'
+match '/signup',  to: 'users#new',        via:    'get'
+match '/signin',  to: 'sessions#new',     via:    'get'
+match '/signout', to: 'sessions#destroy', via:    'delete'
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products

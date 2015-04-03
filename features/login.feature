@@ -4,27 +4,14 @@ Feature: login to AdventuRegion to save adventures
   So that I can keep my favorite adventures
   I want to be able to log in and save my adventures to my profile
 
-# Oh god why
-Background: users have been added to the database
+Scenario: Invalid Credentials Login
+  Given a user visits the signin page
+  When the user submits invalid signin credentials
+  Then the user should see an error message
 
-  Given the following users exist:
-  | username    | password      |
-  | shirley65   | 12345         |
-  | benton26    | hunter2       |
-  | donnieb     | qwerty        |
-  | H4x0r       | E-13E7^hAxor  |
-  | john.smith2 | 0xbeef        |
-
-  And I am on the login page
-
-Scenario: correct login
-  When I fill in "username" with "shirley65"
-  And I fill in "password" with "12345"
-  And I press "login"
-  Then I should see shirley65's page
-
-Scenario: incorrect login
-  When I fill in "username" with "shirley65"
-  And I fill in "password" with "password"
-  And I press "login"
-  Then I should see login incorrect page
+Scenario: Valid Credentials Login
+  Given a user visits the signin page
+  And the user has an account
+  When the user submits valid signin credentials
+  Then the user should see his or her profile page
+  And the user should see a signout link

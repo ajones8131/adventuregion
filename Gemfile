@@ -45,4 +45,5 @@ gem 'simplecov', :require => false, :group => :test
 # gem 'debugger', group: [:development, :test]
 group :test, :development do
   gem "rspec-rails"
+  gem 'better_errors'
 end

@@ -54,8 +54,12 @@
     background-color: #fff;
 }
 
+a.menu_links {
+    cursor: pointer;
+}
+
 /* forms */
-/*input, textarea, select, .uneditable-input {
+input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
@@ -65,7 +69,7 @@
 input {
   height: auto !important;
 }
-*/
+
 #error_explanation {
   color: red;
   ul {
