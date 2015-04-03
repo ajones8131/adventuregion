@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Current Places</h1>
+
+<table style="width:50%">
+  <tr>
+    <th>Place</th>
+    <th>Place ID</th> 
+    <th>Type</th>
+    <th>Price</th>
+    <th>Popularity</th> 
+  </tr>
+</table>
+
+  <% @place.each do |p| %>
+      <tr>
+        <td>'<%= p.name %>'</td>
+        <td><%= p.placeid %></td>
+        <td><%= p.type %></td>
+        <td><%= p.price %></td>
+        <td><%= p.popularity %></td>
+      </tr>
+  <% end %>
+
+<a href="../new.html"> Add new place </a>
+</body>
+</html>
