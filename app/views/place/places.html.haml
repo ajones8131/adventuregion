@@ -1,0 +1,29 @@
+-#  This file is app/views/place/index.html.haml
+%h1 Current Places
+
+= form_tag places_path, :method => :get, :placeid => 'types_form' do
+  Include:
+  - @all_types.each do |type|
+    = type
+    = check_box_tag "types[#{type}]", 1, @selected_types.include?(type), :placeid => "types_#{type}"
+  = submit_tag 'Refresh', :placeid => 'types_submit'
+
+  %table#places
+    %thead
+      %tr
+        %th Place
+        %th Place ID
+        %th Type
+        %th Price
+        %th Popularity
+
+    %tbody
+      - @places.each do |place|
+        %tr
+          %td= place.name
+          %td= place.placeid
+          %td= place.type
+          %td= place.price
+          %td= place.popularity
+
+= link_to 'Add new place(reqires placeid)', new_place_path
