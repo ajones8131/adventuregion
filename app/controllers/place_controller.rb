@@ -1,12 +1,11 @@
 class PlaceController < ApplicationController
 
-	def show
-		placeid = params[:placeid] # retrieve place ID from URI route
-		@place = Place.find(placeid) # look up place by unique ID
-	end
+  def index
+    @places = Place.all
+  end
 
-	def index
-		
+	def show
+		@place = Place.find(params[:id]) # look up place by unique ID
 	end
 
 
@@ -22,6 +21,6 @@ class PlaceController < ApplicationController
   end
 
 	def place_params
-		params.require(:place).permit(:placeid, :name, :type, :price, :popularity)
+		params.require(:place).permit(:name, :placeid, :type, :price, :popularity)
   end
 end
