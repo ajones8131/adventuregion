@@ -5,17 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-places = [{:name => 'Pikes Peak',         :placeid => '1', :type => '',   :price => 'low' ,   :popularity => 'medium'},
-      {:name =>  'Blodgett Peak',         :placeid => '2', :type => '',   :price => 'free',   :popularity => 'low'},
-      {:name =>  'Mt Rosa',               :placeid => '3', :type => '',   :price => 'free',   :popularity => 'low'},
-      {:name =>  'Cheyenne Canyon',       :placeid => '4', :type => '',   :price => 'free',   :popularity => 'medium'},
-      {:name =>  'Go-kart Racing',        :placeid => '5', :type => '',      :price => 'medium', :popularity => 'high'},
-      {:name =>  'Harmony Bowl',          :placeid => '6', :type => '',      :price => 'low',    :popularity => 'high'},
-      {:name =>  'All-Star Paintball',    :placeid => '7', :type => '', :price => 'medium', :popularity => 'high'},
-      {:name =>  'Dragonmans (shooting)', :placeid => '8', :type => '', :price => 'low',    :popularity => 'high'}
+places = [{:name => 'Pikes Peak',         :placeid => '1', :category => 'Hiking',   :price => 'low' ,   :popularity => 'medium'},
+      {:name =>  'Blodgett Peak',         :placeid => '2', :category => 'Hiking',   :price => 'free',   :popularity => 'low'},
+      {:name =>  'Mt Rosa',               :placeid => '3', :category => 'Hiking',   :price => 'free',   :popularity => 'low'},
+      {:name =>  'Cheyenne Canyon',       :placeid => '4', :category => 'Hiking',   :price => 'free',   :popularity => 'medium'},
+      {:name =>  'Go-kart Racing',        :placeid => '5', :category => 'Fun',      :price => 'medium', :popularity => 'high'},
+      {:name =>  'Harmony Bowl',          :placeid => '6', :category => 'Fun',      :price => 'low',    :popularity => 'high'},
+      {:name =>  'All-Star Paintball',    :placeid => '7', :category => 'Shooting', :price => 'medium', :popularity => 'high'},
+      {:name =>  'Dragonmans (shooting)', :placeid => '8', :category => 'Shooting', :price => 'low',    :popularity => 'high'}
   ]
 
 places.each do |place|
   Place.create!(place)
 end
-#Place.create("name" => "Pikes Peak", "placeid" => "1", "type" => "", "price" => "low", "popularity" => "medium")
+#Place.create("name" => "Pikes Peak", "placeid" => "1", "category" => "", "price" => "low", "popularity" => "medium")
