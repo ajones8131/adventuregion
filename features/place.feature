@@ -2,12 +2,12 @@ Feature: display a list of valid places sorted by different criteria
 
   As an adventurer
   So that I can find places to go
-  I want to see places filtered or sorted by type,price, or popularity
+  I want to see places filtered or sorted by category,price, or popularity
 
 Background: places have been added to the database
 
   Given the following places exist:
-  | name                  | type       | price   | popularity |
+  | name                  | category   | price   | popularity |
   | Pikes Peak            | Hiking     | low     | medium     |
   | Blodgett Peak         | Hiking     | free    | low        |
   | Mt Rosa               | Hiking     | free    | low        |
@@ -28,15 +28,15 @@ Scenario: sort places by price
   When I follow "Price"
   Then I should see "Blodgett Peak" before "Pikes Peak"
 
-Scenario: sort places by type
-  When I follow "Type"
+Scenario: sort places by category
+  When I follow "Category"
   Then I should see "Skydiving" before "Sports Climbing Center"
 
 Scenario: sort places by popularity
   When I follow "Popularity"
   Then I should see "Skydiving" before "Cheyenne Canyon"
 
-Scenario: filter places by type
+Scenario: filter places by category
   When I select Hiking
   And I unselect fun,shooting,climbing,adrenaline
   And I press "Refresh"

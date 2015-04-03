@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+  <h2>Showing Details for <%= @place.name %> </h2>
+
+  <%= link_to "Edit Record", {:controller => :place, :action => :edit, :id => @place.id} %>
+  <a href="/"> Return Home </a><br><br>
+
+  Place ID = <%= @place.placeid %><br>
+  Category = <%= @place.category %><br>
+  Price = <%= @place.price %><br>
+  Popularity = <%= @place.popularity %><br>
+
+</body>
+</html>
+<!--
+%ul#details
+  %li
+    Assigned User:
+    = @project.user
+  %li
+    Due by:
+    = @project.due_date.strftime("%B %d, %Y")
+
+%h3 Short Description:
+%p#description= @project.description
+ 
+%h3 Description:
+
+%p#extended_description= @project.extended_description
+
+= link_to 'Edit', edit_project_path(@project)
+= button_to 'Delete', project_path(@project), :method => :delete, :confirm => 'Are you sure?'
+= link_to 'Back to project task list', projects_path -->

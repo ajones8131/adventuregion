@@ -4,7 +4,7 @@
 
   <h1>Current Places</h1>
 
-  <a href="/place/new"> Add new place </a><br>
+  <a href="/place/create"> Add new place </a><br>
   <a href="/"> Return Home </a>
 
   <table id="place_table">
@@ -20,7 +20,7 @@
     <tbody>
       <% @places.each do |p| %>
           <tr>
-            <td>'<%= p.name %>'</td>
+            <td><%= link_to p.name, :controller => :place, :action => :show, :id => p.id %></td>
             <td><%= p.placeid %></td>
             <td><%= p.category %></td>
             <td><%= p.price %></td>

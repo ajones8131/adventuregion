@@ -1,15 +1,15 @@
 {
   "RSpec": {
     "coverage": {
-      "/media/sf_ShareVM/group3/app/helpers/application_helper.rb": [
+      "/home/saasbook/project/group3/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/media/sf_ShareVM/group3/app/helpers/place_helper.rb": [
+      "/home/saasbook/project/group3/app/helpers/place_helper.rb": [
         1,
         null
       ],
-      "/media/sf_ShareVM/group3/app/helpers/sessions_helper.rb": [
+      "/home/saasbook/project/group3/app/helpers/sessions_helper.rb": [
         1,
         null,
         1,
@@ -52,11 +52,11 @@
         null,
         null
       ],
-      "/media/sf_ShareVM/group3/app/helpers/welcome_helper.rb": [
+      "/home/saasbook/project/group3/app/helpers/welcome_helper.rb": [
         1,
         null
       ],
-      "/media/sf_ShareVM/group3/app/controllers/sessions_controller.rb": [
+      "/home/saasbook/project/group3/app/controllers/sessions_controller.rb": [
         1,
         1,
         null,
@@ -80,7 +80,7 @@
         null,
         null
       ],
-      "/media/sf_ShareVM/group3/app/controllers/application_controller.rb": [
+      "/home/saasbook/project/group3/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -90,7 +90,7 @@
         null,
         null
       ],
-      "/media/sf_ShareVM/group3/app/models/user.rb": [
+      "/home/saasbook/project/group3/app/models/user.rb": [
         1,
         null,
         1,
@@ -132,6 +132,6 @@
         null
       ]
     },
-    "timestamp": 1428025601
+    "timestamp": 1428095608
   }
 }

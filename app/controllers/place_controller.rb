@@ -5,13 +5,28 @@ class PlaceController < ApplicationController
   end
 
 	def show
+    id = params[:id]
 		@place = Place.find(params[:id]) # look up place by unique ID
 	end
 
-
   def create
-    @place=Place.create!(place_params)
-    flash[:notice] = "#{@place.name} was successfully created."
+    @place = Place.new
+  end
+
+  def new
+    @place = Place.new(place_params)
+    @place.save
+    redirect_to :action => "index"
+  end
+
+  def edit
+    @place = Place.find params[:id]
+  end
+
+  def update
+    @place = Place.find params[:id]
+    @place.update_attributes!(place_params)
+    flash[:notice] = "#{@place.name} was successfully updated."
   end
 
   def destroy
@@ -21,6 +36,7 @@ class PlaceController < ApplicationController
   end
 
 	def place_params
-		params.require(:place).permit(:name, :placeid, :type, :price, :popularity)
+		params.require(:place).permit(:name, :placeid, :category, :price, :popularity)
   end
+
 end
