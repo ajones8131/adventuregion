@@ -56,40 +56,6 @@
         1,
         null
       ],
-      "/home/saasbook/project/group3/app/controllers/sessions_controller.rb": [
-        1,
-        1,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null
-      ],
-      "/home/saasbook/project/group3/app/controllers/application_controller.rb": [
-        1,
-        null,
-        null,
-        1,
-        null,
-        1,
-        null,
-        null
-      ],
       "/home/saasbook/project/group3/app/models/user.rb": [
         1,
         null,
@@ -139,8 +105,8 @@
         null,
         null,
         1,
-        0,
-        0,
+        1,
+        1,
         null,
         null,
         1,
@@ -175,11 +141,21 @@
         null,
         null
       ],
+      "/home/saasbook/project/group3/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
       "/home/saasbook/project/group3/app/models/place.rb": [
         1,
         null
       ]
     },
-    "timestamp": 1428106480
+    "timestamp": 1428109669
   }
 }
