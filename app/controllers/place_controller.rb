@@ -19,21 +19,21 @@ class PlaceController < ApplicationController
     redirect_to :action => "index"
   end
 
-  def edit
-    @place = Place.find params[:id]
-  end
+  #def edit
+  #  @place = Place.find params[:id]
+  #end
 
-  def update
-    @place = Place.find params[:id]
-    @place.update_attributes!(place_params)
-    flash[:notice] = "#{@place.name} was successfully updated."
-  end
+  #def update
+  #  @place = Place.find params[:id]
+  #  @place.update_attributes!(place_params)
+  #  flash[:notice] = "#{@place.name} was successfully updated."
+  #end
 
-  def destroy
-    @place = Place.find(params[:placeid])
-    @place.destroy
-    flash[:notice] = "#{@place.name} was deleted"
-  end
+  #def destroy
+  #  @place = Place.find(params[:placeid])
+  #  @place.destroy
+  #  flash[:notice] = "#{@place.name} was deleted"
+  #end
 
 	def place_params
 		params.require(:place).permit(:name, :placeid, :category, :price, :popularity)

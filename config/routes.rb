@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'place/create'
   get 'place/show'
   get 'place/edit'
+  post 'place/new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
