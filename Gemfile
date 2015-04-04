@@ -35,6 +35,9 @@ gem 'bcrypt', '~> 3.1.7'
 #Simplecov for spec/cucumber analysis
 gem 'simplecov', :require => false, :group => :test
 
+gem 'reek'
+gem 'flog'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
