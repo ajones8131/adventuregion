@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-</head>
-<body>
-
+    <title>AdventuRegion</title>
+    <%= stylesheet_link_tag "index.css" %>
+  </head>
+  <body>
+    <%= render 'shared/navbar' %>
+    
   <h2>Showing Details for <%= @place.name %> </h2>
 
   <%= link_to "Edit Record", {:controller => :place, :action => :edit, :id => @place.id} %>

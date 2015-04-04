@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-</head>
-<body>
+    <title>AdventuRegion</title>
+    <%= stylesheet_link_tag "index.css" %>
+  </head>
+    <body>
+      <%= render 'shared/navbar' %>
 
-  <h1>Place#new</h1>
-  <%= form_for(@place, url: "/place/new") do |p| %>
+      <h1>Create a new Place</h1>
+      <%= form_for(@place, url: "/place/new") do |p| %>
 
-    <%= p.label :name %>:
-    <%= p.text_field :name %><br><br>
+        <%= p.label :name %>:
+        <%= p.text_field :name %><br><br>
 
-    <%= p.label :placeid %>:
-    <%= p.text_field :placeid %><br><br>
+        <%= p.label :category %>:
+        <%= p.text_field :category %><br><br>
 
-    <%= p.label :category %>:
-    <%= p.text_field :category %><br><br>
+        <%= p.label :price %>:
+        <%= p.text_field :price %><br><br>
 
-    <%= p.label :price %>:
-    <%= p.text_field :price %><br><br>
+        <%= p.label :popularity %>:
+        <%= p.text_field :popularity %><br><br>
 
-    <%= p.label :popularity %>:
-    <%= p.text_field :popularity %><br><br>
+        <%= p.submit "Create Place" %><br>
+    <% end %>
 
-    <%= p.submit %><br>
-  <% end %>
-
-  <a href="/place/index"> Return to Places </a><br>
-  <a href="/"> Return Home </a>
-</body>
+    <a href="/place/index"> Return to Places </a><br>
+  </body>
 </html>

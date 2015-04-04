@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
+ <head>
+    <title>AdventuRegion</title>
+    <%= stylesheet_link_tag "index.css" %>
+  </head>
+  <body>
+    <%= render 'shared/navbar' %>
 <body>
 
   <h1>Current Places</h1>
 
-  <a href="/place/create"> Add new place </a><br>
-  <a href="/"> Return Home </a>
+ <!--  <a href="/place/create"> Add new place </a><br> -->
+
+  <a> <%=  link_to "Add a place", "/place/create" %> </a>
 
   <table id="place_table">
     <thead>
