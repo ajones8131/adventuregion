@@ -130,8 +130,56 @@
         null,
         null,
         null
+      ],
+      "/home/saasbook/project/group3/app/controllers/place_controller.rb": [
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/home/saasbook/project/group3/app/models/place.rb": [
+        1,
+        null
       ]
     },
-    "timestamp": 1428095608
+    "timestamp": 1428106480
   }
 }
