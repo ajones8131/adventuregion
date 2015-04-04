@@ -9,14 +9,14 @@
     
   <h2>Showing Details for <%= @place.name %> </h2>
 
-  <%= link_to "Edit Record", {:controller => :place, :action => :edit, :id => @place.id} %>
+  <%= link_to "Edit Record", {:controller => :place, :action => :edit, :id => @place.id} %><br>
   <a href="/"> Return Home </a><br><br>
 
-  Place ID = <%= @place.placeid %><br>
+  Name = <%= @place.name %><br>
   Category = <%= @place.category %><br>
   Price = <%= @place.price %><br>
-  Popularity = <%= @place.popularity %><br>
-
+  Popularity = <%= @place.popularity %><br><br>
+  <a href="/place"> Return to Places </a><br>
 </body>
 </html>
 <!--

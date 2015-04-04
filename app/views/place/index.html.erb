@@ -18,7 +18,6 @@
     <thead>
       <tr>
         <th>Place</th>
-        <th>Place ID</th> 
         <th>Type</th>
         <th>Price</th>
         <th>Popularity</th> 
@@ -28,7 +27,6 @@
       <% @places.each do |p| %>
           <tr>
             <td><%= link_to p.name, :controller => :place, :action => :show, :id => p.id %></td>
-            <td><%= p.placeid %></td>
             <td><%= p.category %></td>
             <td><%= p.price %></td>
             <td><%= p.popularity %></td>
