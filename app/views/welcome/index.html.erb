@@ -27,6 +27,11 @@
         <option value="BICYCLING">Bicycling</option>
         <option value="TRANSIT">Transit</option>
     </select>
+    <select id='endPlace'>
+        <% @places.each do |p| %>
+          <option value=<%= p.name %>><%= p.name %></option>
+      <% end %>
+  </select>
 
     <button type="button" onclick="maps:calcRoute();">submit</button>
     <div id="map-canvas"></div>
