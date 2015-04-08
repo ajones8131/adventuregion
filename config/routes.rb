@@ -2,6 +2,11 @@ Rails.application.routes.draw do
 
   #get 'welcome/index'
 
+  get 'place/index'
+  get 'place/edit'
+  get 'place/create'
+  post 'place/new'
+  post 'place/update'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
