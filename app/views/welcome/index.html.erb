@@ -20,18 +20,21 @@
     <p>This is a place to find your adventures around your area. Search for your location and start your adventure today!</p>
 
     <input id='start' type="text" placeholder="Start Location"></input>
-    <input id='end' type="text" placeholder="End Location"></input>
+    <!--<input id='end' type="text" placeholder="End Location"></input>-->
     <select id='selectMode'>
         <option value="DRIVING">Driving</option>
         <option value="WALKING">Walking</option>
         <option value="BICYCLING">Bicycling</option>
         <option value="TRANSIT">Transit</option>
     </select>
-    <select id='endPlace'>
+    <select id='end'>
         <% @places.each do |p| %>
           <option value=<%= p.name %>><%= p.name %></option>
       <% end %>
   </select>
+
+  <input id='placeLat' type="text" value=<%=p.latitude%>></input>
+  <input id='placeLng' type="text" value=<%=p.longitude%>></input>
 
     <button type="button" onclick="maps:calcRoute();">submit</button>
     <div id="map-canvas"></div>

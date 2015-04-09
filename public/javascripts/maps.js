@@ -134,12 +134,13 @@
 	// Calculate the route from start location to end location
 	function calcRoute() {
 		var start = document.getElementById('start').value;
-	  	var end = document.getElementById('end').value;
+	  	var placeLat = document.getElementById('placeLat').value;
+	  	var placeLng = document.getElementById('placeLng').value;
 	  	var selectMode = document.getElementById('selectMode').value;
 
 		var request = {
 			origin: start,
-			destination: end,
+			destination: new google.maps.LatLng(placeLat, placeLng),
 			travelMode: google.maps.TravelMode[selectMode]
 		};
 
