@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
   def index
-  	@places = Place.all
+  	ordering, @type_header = {:name => :asc}, 'hilite'
+    @places = Place.order(ordering)
   end
   
   def place

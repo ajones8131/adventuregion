@@ -19,22 +19,3 @@
   <a href="/place"> Return to Places </a><br>
 </body>
 </html>
-<!--
-%ul#details
-  %li
-    Assigned User:
-    = @project.user
-  %li
-    Due by:
-    = @project.due_date.strftime("%B %d, %Y")
-
-%h3 Short Description:
-%p#description= @project.description
- 
-%h3 Description:
-
-%p#extended_description= @project.extended_description
-
-= link_to 'Edit', edit_project_path(@project)
-= button_to 'Delete', project_path(@project), :method => :delete, :confirm => 'Are you sure?'
-= link_to 'Back to project task list', projects_path -->

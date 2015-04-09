@@ -1,7 +1,14 @@
 class PlaceController < ApplicationController
 
   def index
-    @places = Place.all
+    ordering, @type_header = {:category => :asc}, 'hilite'
+    @places = Place.order(ordering)
+    #@selectedCategory = params[:category]
+    #if  @selectedCategory == {}
+    #  @selectedCategory = Hash[@categories.map{|category| [category, category]}]
+    #end
+
+    #@places = Place.where(category: @selectedCategory.keys).order(ordering)
   end
 
 	def show

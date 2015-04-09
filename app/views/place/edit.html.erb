@@ -21,18 +21,18 @@
         <input id="place_category" name="place[category]" type="text" value=<%= @place.category %>><br><br>
 
         <label for="place_price">Price</label>:
-        <select id="place_price" name="place[price]" value=<%= @place.price %>>
-          <option value="Free">Free</option>
-          <option value="Low">Low</option>
-          <option value="Medium">Medium</option>
-          <option value="High">High</option>
+        <select id="place_price" name="place[price]">
+          <option value="Free" <% if @place.price == "Free" %>selected<% end %>>Free</option>
+          <option value="Low" <% if @place.price == "Low" %>selected<% end %>>Low</option>
+          <option value="Medium" <% if @place.price == "Medium" %>selected<% end %>>Medium</option>
+          <option value="High" <% if @place.price == "High" %>selected<% end %>>High</option>
         </select><br><br>
 
         <label for="place_popularity">Popularity</label>:
         <select id="place_popularity" name="place[popularity]">
-          <option value="Low" >Low</option>
-          <option value="Medium">Medium</option>
-          <option value="High">High</option>
+          <option value="Low" <% if @place.popularity == "Low" %>selected<% end %>>Low</option>
+          <option value="Medium" <% if @place.popularity == "Medium" %>selected<% end %>>Medium</option>
+          <option value="High" <% if @place.popularity == "High" %>selected<% end %>>High</option>
         </select><br><br>
 
         <input name="commit" type="submit" value="Update Place"><br>

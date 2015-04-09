@@ -13,6 +13,16 @@
  <!--  <a href="/place/create"> Add new place </a><br> -->
 
   <a> <%=  link_to "Add a place", "/place/create" %> </a>
+    <% lastCategory = "" %>
+    <select id='selectCategory'>
+      <% @places.each do |p|%>
+        <% if lastCategory != p.category %>
+          <option value=<%= p.category %>><%= p.category %></option>
+        <% end %>
+        <% lastCategory = p.category %>
+      <% end %>
+  </select>
+  <input name="refresh" type="submit" value="Refresh"><br>
 
   <table id="place_table">
     <thead>
@@ -20,7 +30,9 @@
         <th>Place</th>
         <th>Type</th>
         <th>Price</th>
-        <th>Popularity</th> 
+        <th>Popularity</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
       </tr>
     </thead>
     <tbody>
@@ -30,6 +42,8 @@
             <td><%= p.category %></td>
             <td><%= p.price %></td>
             <td><%= p.popularity %></td>
+            <td><%= p.latitude %></td>
+            <td><%= p.longitude %></td>
           </tr>
       <% end %>
   </tbody>
