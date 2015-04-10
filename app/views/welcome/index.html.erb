@@ -33,8 +33,10 @@
       <% end %>
   </select>
 
-  <input id='placeLat' type="text" value=<%=p.latitude%>></input>
-  <input id='placeLng' type="text" value=<%=p.longitude%>></input>
+  <!-- This is to store the latlng so maps.js can read the values from index easily
+  <!--     need to fix 
+  <!--<input id='placeLat' type="text" value=<%=p.latitude%\>\></input\>
+  <!--<input id='placeLng' type="text" value=<%=p.longitude%\>\></input\>-->
 
     <button type="button" onclick="maps:calcRoute();">submit</button>
     <div id="map-canvas"></div>
