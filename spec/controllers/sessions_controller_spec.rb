@@ -16,10 +16,11 @@ RSpec.describe SessionsController, :type => :controller do
 
 		before :each do 
 			visit signin_path
-			post sign_in, credentials
 		end
 
 		it "Successful user sessions and sign in" do
+			expect(email => params[:session][:email]).to eq(user.email)
+			expect(password => params[:session][:password]).to eq(user.password)
 			expect(session[:id]).to eq(user.id)
 			expect(page).to have_content("#{user.name}")
 		end
