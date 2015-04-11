@@ -12,17 +12,29 @@
 
  <!--  <a href="/place/create"> Add new place </a><br> -->
 
-  <a> <%=  link_to "Add a place", "/place/create" %> </a>
-    <% lastCategory = "" %>
-    <select id='selectCategory'>
-      <% @places.each do |p|%>
-        <% if lastCategory != p.category %>
-          <option value=<%= p.category %>><%= p.category %></option>
-        <% end %>
-        <% lastCategory = p.category %>
-      <% end %>
-  </select>
-  <input name="refresh" type="submit" value="Refresh"><br>
+  <a> <%=  link_to "Add a place", "/place/create" %> </a><br><br>
+
+<!--   
+- @all_users.each do |user|
+    = user
+    = check_box_tag "users[#{user}]", 1, @selected_users.include?(user), :id => "users_#{user}"
+  = submit_tag 'Refresh', :id => 'users_submit' -->
+
+
+<form id="categories_form" method="get" action="/place" accept-charset="UTF-8">
+  <div style="display:none">
+    <input type="hidden" value="✓" name="utf8"></input>
+  </div>
+
+  <% @allCategories.each do |type| %>
+    <%= check_box_tag "categories[#{type}]", 1, @selectedCategory.include?(type), :id => "categories_#{type}" %>
+    <%= type %>
+  <% end %>
+
+  <input id="categories_submit" type="submit" value="Refresh" name="commit"></input>
+</form>
+
+  <!-- <input name="refresh" type="submit" value="Refresh"><br> -->
 
   <table id="place_table">
     <thead>
