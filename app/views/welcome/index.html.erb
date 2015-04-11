@@ -28,13 +28,15 @@
         <option value="TRANSIT">Transit</option>
     </select>
     <select id='end'>
-        <% @places.each do |p| %>
-          <option value=<%= p.name %>><%= p.name %></option>
+      <% @places.each do |p| %>
+          <option value='<%= p.name %>'><%= p.name %></option>
       <% end %>
   </select>
 
-  <input id='placeLat' type="text" value=<%=p.latitude%>></input>
-  <input id='placeLng' type="text" value=<%=p.longitude%>></input>
+  <!-- This is to store the latlng so maps.js can read the values from index easily
+  <!--     need to fix -->
+  <!-- <input id='placeLat' type="text" value="po"/></input\> -->
+  <!-- <input id='placeLng' type="text" value=<%=p.longitude%/>/></input\>-->
 
     <button type="button" onclick="maps:calcRoute();">submit</button>
     <div id="map-canvas"></div>

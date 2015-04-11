@@ -2,13 +2,20 @@ class PlaceController < ApplicationController
 
   def index
     ordering, @type_header = {:category => :asc}, 'hilite'
-    @places = Place.order(ordering)
-    #@selectedCategory = params[:category]
-    #if  @selectedCategory == {}
-    #  @selectedCategory = Hash[@categories.map{|category| [category, category]}]
-    #end
+    #@places = Place.order(ordering)
 
-    #@places = Place.where(category: @selectedCategory.keys).order(ordering)
+    @allCategories = Place.getCategories
+
+    @selectedCategory = params[:category] || session[:category] ||{}
+    if  @selectedCategory == {}
+      @selectedCategory = Hash[@allCategories.map{|category| [category, category]}]
+    end
+
+    if params[:category] != session[:category]
+      session[:category] = @selectedCategory
+      redirect_to :category => @selectedCategory and return
+    end
+    @places = Place.where(category: @selectedCategory.keys).order(ordering)
   end
 
 	def show

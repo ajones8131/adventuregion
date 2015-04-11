@@ -8,33 +8,28 @@ Background: places have been added to the database
 
   Given the following places exist:
   | name                  | category   | price   | popularity |
-  | Pikes Peak            | Hiking     | low     | medium     |
-  | Blodgett Peak         | Hiking     | free    | low        |
-  | Mt Rosa               | Hiking     | free    | low        |
-  | Cheyenne Canyon       | Hiking     | free    | medium     |
-  | Go-kart racing        | fun        | medium  | high       |
-  | Harmony Bowl          | fun        | low     | high       |
-  | All-Star Paintball    | shooting   | medium  | high       |
-  | Dragonmans (shooting) | shooting   | low     | high       |
-  | Dragonmans (paintball)| shooting   | medium  | high       |
-  | Sky-zone              | fun        | medium  | high       |
-  | Sports Climbing Center| climbing   | medium  | high       |
-  | City Rock             | climbing   | medium  | high       |
-  | Skydiving             | adrenaline | high    | low        |
+  | Pikes Peak            | Hiking     | Low     | Medium     |
+  | Blodgett Peak         | Hiking     | Free    | Low        |
+  | Mt Rosa               | Hiking     | Free    | Low        |
+  | Cheyenne Canyon       | Hiking     | Free    | Medium     |
+  | Go-kart racing        | Fun        | Medium  | High       |
+  | Harmony Bowl          | Fun        | Low     | High       |
+  | All-Star Paintball    | Shooting   | Medium  | High       |
+  | Dragonmans            | Shooting   | Low     | High       |
+  | Sky-zone              | Fun        | Medium  | High       |
+  | Sports Climbing Center| Climbing   | Medium  | High       |
+  | City Rock             | Climbing   | Medium  | High       |
+  | Skydiving             | Adrenaline | High    | Low        |
 
   And I am on the home page
 
-Scenario: sort places by price
-  When I follow "Price"
-  Then I should see "Blodgett Peak" before "Pikes Peak"
+Scenario: Auto Sort By Category
+  When I follow "name"
+  Then I should see "Skydiving" before "Pikes Peak"
+  And I should see "Sky-zone" before "Dragonmans"
+  And I should see "City Rock" before "Go-kart racing"
 
-Scenario: sort places by category
-  When I follow "Category"
-  Then I should see "Skydiving" before "Sports Climbing Center"
 
-Scenario: sort places by popularity
-  When I follow "Popularity"
-  Then I should see "Skydiving" before "Cheyenne Canyon"
 
 Scenario: filter places by category
   When I select Hiking
@@ -89,4 +84,3 @@ Scenario: filter places by popularity
   And I should not see "Sports Climbing Center"
   And I should not see "City Rock"
   And I should see "Skydiving"
-
