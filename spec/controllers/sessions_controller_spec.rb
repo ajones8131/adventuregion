@@ -8,26 +8,37 @@ RSpec.describe SessionsController, :type => :controller do
                      password: "foobar", password_confirmation: "foobar")
 	end
 
-	describe "GET #new" do
-		it "returns http success" do
-		  get :new
-		  expect(response).to have_http_status(:success)
-		end
-	end
-
-	describe "#create" do 
+	describe "sign in" do 
 
 		let :credentials do 
 			{ :email => 'group3@example.com', :password => 'foobar' }
 		end
 
 		before :each do 
+			visit signin_path
 			post sign_in, credentials
 		end
 
-		it "creates a user sessions" do
+		it "Successful user sessions and sign in" do
 			expect(session[:id]).to eq(user.id)
+			expect(page).to have_content("#{user.name}")
 		end
+
+		let :credentials do 
+			{ :email => 'group3@example.com', :password => 'wrongpwd' }			
+		end
+
+		before :each do
+			visit signin_path
+			post sign_in, credentials
+		end
+
+		it "Unsuccessful user session and sign in" do
+			expect(session[:id]).to eq(nil)
+			expect(page).to have_selector('div.alert.alert-error')
+			expect(page).to have_content('Invalid email/password combination')
+			expect(page).to have_content("Sign In")	
+		end		
 	end
 
 	describe "sign out" do
