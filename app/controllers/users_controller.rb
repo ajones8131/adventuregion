@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   		@user = User.new(user_params)
 	  	if @user.save
 	  		sign_in @user
-	  		flash[:success] = "Welcome Random!"
+	  		flash[:success] = "Welcome! #{current_user.name}"
 	  		redirect_to @user
 	  	else
 	  		render 'new'
