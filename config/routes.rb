@@ -2,11 +2,12 @@ Rails.application.routes.draw do
 
   #get 'welcome/index'
 
-  get 'place/index'
-  get 'place/edit'
-  get 'place/create'
+  get  'place/index'
+  get  'place/edit'
+  get  'place/create'
   post 'place/new'
   post 'place/update'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -21,7 +22,6 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 resources :users
 resources :place
-resources :sessions, only: [:new, :create, :destroy]
 
 root  to: 'welcome#index'
 
@@ -31,8 +31,10 @@ match '/price',   to: 'welcome#price',    via:    'get'
 match '/planner', to: 'welcome#planner',  via:    'get'
 match '/signup',  to: 'users#new',        via:    'get'
 match '/signin',  to: 'sessions#new',     via:    'get'
-match '/place',   to: 'place#index',      via:    'get'
+match '/signin',  to: 'sessions#create',  via:    'post'
 match '/signout', to: 'sessions#destroy', via:    'delete'
+match '/place',   to: 'place#index',      via:    'get'
+
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products

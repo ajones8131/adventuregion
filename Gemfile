@@ -38,8 +38,12 @@ gem 'simplecov', :require => false, :group => :test
 gem 'reek'
 gem 'flog'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+# Use unicorn as the app server 
+#OLD -> DOES NOT PROTECT AGAINST SLOW CLIENT ATTACKS
+#gem 'unicorn'
+
+# Using puma in place of unicorn
+gem 'puma'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

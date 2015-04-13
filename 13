@@ -1,2 +1,0 @@
-      invoke  active_record
-      create    db/migrate/20150409182007_add_lat_and_lang.rb
