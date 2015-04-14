@@ -13,5 +13,5 @@ Feature: Signing in to AdventuRegion to save adventures
     Given a user visits the signin page
       And the user has an account
     When the user submits valid signin information
-    Then the user should see hisher profile page
+    Then I should see my profile page
       And the user should see a signout tab at navbar

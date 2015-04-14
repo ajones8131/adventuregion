@@ -36,7 +36,6 @@ RSpec.describe SessionsController, :type => :controller do
 
 		it "Unsuccessful user session and sign in" do
 			expect(session[:id]).to eq(nil)
-			expect(page).to have_selector('div.alert.alert-error')
 			expect(page).to have_content('Invalid email/password combination')
 			expect(page).to have_content("Sign In")	
 		end		

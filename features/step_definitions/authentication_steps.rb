@@ -33,8 +33,10 @@ When /^the user submits valid signin information$/ do
 	click_button("Sign in")
 end
 
-Then /^the user should see hisher profile page$/ do
+Then /^I should see my profile page$/ do
   expect(page).to have_content(@user.name)
+  expect(page).to have_no_content('Log in')
+  expect(page).to have_content('Sign Out')
 end
 
 Then /^the user should see a signout tab at navbar$/ do
