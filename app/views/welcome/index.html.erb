@@ -15,30 +15,37 @@
 <body>
 
     <%= render 'Shared/navbar' %>
-    <h1>Find your Adventure at AdventuRegion </h1>
+    <div id='main'>
 
-    <p>This is a place to find your adventures around your area. Search for your location and start your adventure today!</p>
+      <h1>Find your Adventure at AdventuRegion </h1>
 
-    <input id='start' type="text" placeholder="Start Location"></input>
-    <!--<input id='end' type="text" placeholder="End Location"></input>-->
-    <select id='selectMode'>
-        <option value="DRIVING">Driving</option>
-        <option value="WALKING">Walking</option>
-        <option value="BICYCLING">Bicycling</option>
-        <option value="TRANSIT">Transit</option>
-    </select>
-    <select id='end'>
-      <% @places.each do |p| %>
-          <option value='<%= p.name %>'><%= p.name %></option>
-      <% end %>
-  </select>
+      <p>This is a place to find your adventures around your area. Search for your location and start your adventure today!</p>
+
+      <input id='start' type="text" placeholder="Start Location"></input>
+      <!--<input id='end' type="text" placeholder="End Location"></input>-->
+      <select id='end'>
+        <% @places.each do |p| %>
+            <option value='<%= p.latitude.to_s + "," + p.longitude.to_s %>'><%= p.name %></option>
+        <% end %>
+      </select>
+      <select id='selectMode'>
+          <option value="DRIVING">Driving</option>
+          <option value="WALKING">Walking</option>
+          <option value="BICYCLING">Bicycling</option>
+          <option value="TRANSIT">Transit</option>
+      </select>
+      <button type="button" onclick="maps:calcRoute();">submit</button>
+      <button type="button" onclick="maps:calcRoute('<%= random = get_random(); random.latitude.to_s + ',' + random.longitude.to_s %>', '<%=random.name %>');">Random!</button>
+    </div>
+
+ 
 
   <!-- This is to store the latlng so maps.js can read the values from index easily
   <!--     need to fix -->
   <!-- <input id='placeLat' type="text" value="po"/></input\> -->
   <!-- <input id='placeLng' type="text" value=<%=p.longitude%/>/></input\>-->
 
-    <button type="button" onclick="maps:calcRoute();">submit</button>
+
     <div id="map-canvas"></div>
     <input id="places-input" class="controls" type="text" placeholder="Search for places">
 
