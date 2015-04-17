@@ -16,18 +16,28 @@
     = check_box_tag "users[#{user}]", 1, @selected_users.include?(user), :id => "users_#{user}"
   = submit_tag 'Refresh', :id => 'users_submit' -->
 
-
-<form id="category_form" method="get" action="/place" accept-charset="UTF-8">
-  <div style="display:none">
-    <input type="hidden" value="✓" name="utf8"></input>
-  </div>
-
+<form id="filter_form" method="get" action="/place" accept-charset="UTF-8">
+<select name="category" form="filter_form">
+  <option value=''>Select a Category</option>
   <% @allCategories.each do |type| %>
-    <%= check_box_tag "category[#{type}]", 1, @selectedCategory.include?(type), :id => "category_#{type}" %>
-    <%= type %>
+    <option value='<%= type %>'><%= type %></option>
   <% end %>
+</select>
 
-  <input id="category_submit" type="submit" value="Refresh" name="commit"></input>
+<select name="price" form="filter_form">
+  <option value=''>Select a Price</option>
+  <% @allPrices.each do |value| %>
+    <option value='<%= value %>'><%= value %></option>
+  <% end %>
+</select>
+
+<select name="popularity" form="filter_form">
+  <option value=''>Select Popularity</option>
+  <% @allPopularities.each do |value| %>
+    <option value='<%= value %>'><%= value %></option>
+  <% end %>
+</select>
+  <input type="submit" value="Filter"></input>
 </form>
 
   <!-- <input name="refresh" type="submit" value="Refresh"><br> -->

@@ -2,20 +2,20 @@ class PlaceController < ApplicationController
 
   def index
     ordering, @type_header = {:category => :asc}, 'hilite'
-    #@places = Place.order(ordering)
+    @places = Place.order(ordering)
 
     @allCategories = Place.getCategories
+    @allPrices = Place.getPrice
+    @allPopularities = Place.getPopularity
 
-    @selectedCategory = params[:category] || session[:category] ||{}
-    if  @selectedCategory == {}
-      @selectedCategory = Hash[@allCategories.map{|category| [category, category]}]
-    end
+    # @places = @places.category(params[:category]) if params[:category].present?
+    # @places = @places.price(params[:price]) if params[:price].present?
+    # @places = @places.popularity(params[:popularity]) if params[:popularity].present?
 
-    if params[:category] != session[:category]
-      session[:category] = @selectedCategory
-      redirect_to :category => @selectedCategory and return
+    filtering_params(params).each do |key, value|
+      @places = @places.public_send(key, value)if value.present?
     end
-    @places = Place.where(category: @selectedCategory.keys).order(ordering)
+    # @places = Place.where(category: @selectedCategory.keys, price: @selectedPrice.keys).order(ordering)
   end
 
 	def show
@@ -52,6 +52,11 @@ class PlaceController < ApplicationController
 
 	def place_params
 		params.require(:place).permit(:name, :placeid, :category, :price, :popularity)
+  end
+
+  #private
+  def filtering_params(params)
+    params.slice(:category, :price, :popularity)
   end
 
 end
