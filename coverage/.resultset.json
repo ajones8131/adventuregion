@@ -166,6 +166,9 @@
       ],
       "/home/saasbook/github/group3/app/models/place.rb": [
         1,
+        1,
+        0,
+        null,
         null
       ],
       "/home/saasbook/github/group3/app/controllers/sessions_controller.rb": [
@@ -214,6 +217,6 @@
         null
       ]
     },
-    "timestamp": 1428709887
+    "timestamp": 1429240197
   }
 }

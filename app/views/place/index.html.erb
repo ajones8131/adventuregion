@@ -17,17 +17,17 @@
   = submit_tag 'Refresh', :id => 'users_submit' -->
 
 
-<form id="categories_form" method="get" action="/place" accept-charset="UTF-8">
+<form id="category_form" method="get" action="/place" accept-charset="UTF-8">
   <div style="display:none">
     <input type="hidden" value="✓" name="utf8"></input>
   </div>
 
   <% @allCategories.each do |type| %>
-    <%= check_box_tag "categories[#{type}]", 1, @selectedCategory.include?(type), :id => "categories_#{type}" %>
+    <%= check_box_tag "category[#{type}]", 1, @selectedCategory.include?(type), :id => "category_#{type}" %>
     <%= type %>
   <% end %>
 
-  <input id="categories_submit" type="submit" value="Refresh" name="commit"></input>
+  <input id="category_submit" type="submit" value="Refresh" name="commit"></input>
 </form>
 
   <!-- <input name="refresh" type="submit" value="Refresh"><br> -->
