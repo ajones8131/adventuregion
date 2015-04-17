@@ -38,6 +38,4 @@ ActiveRecord::Schema.define(version: 20150409182007) do
     t.string   "remember_digest"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-
 end

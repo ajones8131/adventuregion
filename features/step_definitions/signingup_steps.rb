@@ -33,4 +33,6 @@ Then /^the user should see the signup page again$/ do
   expect(page).to have_content("Sign up")
 end
 
-
+Then /^I sign out$/ do
+	visit('/signin')
+end

@@ -1,7 +1,9 @@
 require 'rails_helper'
 require 'spec_helper'
 
-RSpec.describe SessionsController, :type => :controller do
+RSpec.describe SessionsController do
+
+	subject { page }
 
 	before do
 		@user = User.new(name: "Group3", email: "group3@example.com",
@@ -12,7 +14,7 @@ RSpec.describe SessionsController, :type => :controller do
 
 		before :each do 
 			visit signin_path
-			post sign_in @user
+			signin @user
 		end
 
 		it "Successful user sessions and sign in" do
@@ -23,8 +25,8 @@ RSpec.describe SessionsController, :type => :controller do
 		end
 
 		before :each do
-			visit signin_path
-			post sign_in @user
+			visit "/signin"
+			signin @user
 		end
 
 		it "Unsuccessful user session and sign in" do
@@ -38,13 +40,13 @@ RSpec.describe SessionsController, :type => :controller do
 
 	describe "sign out" do
 		before :each do 
-			visit signin_path
-			post sign_in @user
+			visit "/signin"
+			signin @user
 		end
 
 		it "should sign out a user" do
-			before { destroy sign_out @user }
-			specify { expect(response).to redirect_to(signin_path) }
+			delete :destroy
+  			request.original_url.eq signin_path
 			expect(page).to have_content("Sign In")
 			expect(page).to have_content("Sign up now!")
 		end	

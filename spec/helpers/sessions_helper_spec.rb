@@ -8,10 +8,6 @@ RSpec.describe SessionsHelper, :type => :helper do
 
 		it "signed in?" do
 			expect(current_user).to eq(nil)
-		end
-
-		it "sign_out" do
-			expect(current_user).to eq(nil)
 		end	
 	end
 end

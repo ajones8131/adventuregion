@@ -1,7 +1,7 @@
 include ApplicationHelper
 
-def sign_in(user)
-	visit signin_path
+def signin(user)
+	visit "/signin"
     fill_in "Email",    with: @user.email, match: :first
     fill_in "Password", with: @user.password, match: :first
     click_button "Sign in"
