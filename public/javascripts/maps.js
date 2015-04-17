@@ -132,11 +132,11 @@
 	}
 
 	// Calculate the route from start location to end location
-	function calcRoute() {
+	function calcRoute(end, name) {
 		var start = document.getElementById('start').value;
 	  	var selectMode = document.getElementById('selectMode').value;
-
-	  	var end = document.getElementById('end').value;
+	  	var end = end || document.getElementById('end').value;
+	  	var name = name || end.value
 	  	//var placeLng = document.getElementById('end').name;
 
 		var request = {
@@ -150,6 +150,8 @@
 		      directionsDisplay.setDirections(response);
 		    }
 	  	});
+
+	  	document.getElementById('message').value = "Routed path to " + name;
 	}
 
 	// Adds listener and calls the initialize
