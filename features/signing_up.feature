@@ -13,7 +13,7 @@ Feature: Signing up for an account to AdventuRegion to save adventures
 	And I fill in "Name" with "Group3"
 	And I fill in "Email" with "Group3@random.com"
 	And I fill in "Password" with "foobar"
-	And I fill in "Confirm Password" with "foobar"
+	And I fill in "user_password_confirmation" with "foobar"
 	And I press "Create Account"
 	Then I should see my newly created profile page
 

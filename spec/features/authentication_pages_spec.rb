@@ -21,29 +21,23 @@ describe "Authentication" do
       it { should have_title('Sign in') }
       it { should have_content('Sign up now!') }
 
-      describe "after visiting another page" do
-        before { click_link "About Us" }
-        it { should_not have_selector('div.alert.alert-error') }
-      end
     end
 
     describe "with valid information" do
-      let(:user) { User.create(:user) }
       before do
-        fill_in "Email",    with: user.email
-        fill_in "Password", with: user.password
+       @user = User.create(name: "Group3", email: "group3@example.com",
+                     password: "foobar", password_confirmation: "foobar")
+
+        fill_in "Email",    with: @user.email
+        fill_in "Password", with: @user.password
         click_button "Sign in"
       end
       
-      it { should have_content(user.name) }
-      it { should have_link('Sign out',    href: signout_path) }
-      it { should have_link('#{user.name}',    href: user_path) }
-      it { should_not have_link('Sign in', href: signin_path) }
+      it { should have_content(@user.name) }
+      it { should have_content('Sign Out') }
+      it { should have_content('Group3') }
+      it { should_not have_content('Sign in') }
 
-      describe "followed by signout" do
-        before { delete user_path(User.create(:user)) }
-        specify { expect(response).to redirect_to(signin_path) }
-      end
     end
   end
 end

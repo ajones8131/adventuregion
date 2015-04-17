@@ -10,12 +10,9 @@ RSpec.describe SessionsController, :type => :controller do
 
 	describe "sign in" do 
 
-		let :credentials do 
-			{ :email => 'group3@example.com', :password => 'foobar' }
-		end
-
 		before :each do 
 			visit signin_path
+			post sign_in @user
 		end
 
 		it "Successful user sessions and sign in" do
@@ -25,16 +22,14 @@ RSpec.describe SessionsController, :type => :controller do
 			expect(page).to have_content("#{user.name}")
 		end
 
-		let :credentials do 
-			{ :email => 'group3@example.com', :password => 'wrongpwd' }			
-		end
-
 		before :each do
 			visit signin_path
 			post sign_in @user
 		end
 
 		it "Unsuccessful user session and sign in" do
+			expect(response).to 
+			response.should_not be_success
 			expect(session[:id]).to eq(nil)
 			expect(page).to have_content('Invalid email/password combination')
 			expect(page).to have_content("Sign In")	
@@ -43,13 +38,15 @@ RSpec.describe SessionsController, :type => :controller do
 
 	describe "sign out" do
 		before :each do 
-			sign_in @user
+			visit signin_path
+			post sign_in @user
 		end
 
 		it "should sign out a user" do
-			before { delete user_path(User.create(:user)) }
+			before { destroy sign_out @user }
 			specify { expect(response).to redirect_to(signin_path) }
-			expect(page).to have_content("Sign In")			
+			expect(page).to have_content("Sign In")
+			expect(page).to have_content("Sign up now!")
 		end	
 	end
 end
