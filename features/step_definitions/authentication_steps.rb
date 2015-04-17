@@ -43,6 +43,7 @@ Then /^the user should see a signout tab at navbar$/ do
   expect(page).to have_content('Sign Out')
 end
 
+# For later use
 When /^the user clicks forgot password button$/ do
   click_button("Forgot Password")
 end

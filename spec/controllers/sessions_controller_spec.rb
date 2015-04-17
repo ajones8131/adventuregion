@@ -31,7 +31,7 @@ RSpec.describe SessionsController, :type => :controller do
 
 		before :each do
 			visit signin_path
-			post sign_in, credentials
+			post sign_in @user
 		end
 
 		it "Unsuccessful user session and sign in" do
@@ -47,10 +47,9 @@ RSpec.describe SessionsController, :type => :controller do
 		end
 
 		it "should sign out a user" do
-			delete signout_path
-			get 'signin'
-			expect(response).to be_success
+			before { delete user_path(User.create(:user)) }
+			specify { expect(response).to redirect_to(signin_path) }
 			expect(page).to have_content("Sign In")			
-		end			
+		end	
 	end
 end
