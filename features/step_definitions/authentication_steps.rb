@@ -9,12 +9,17 @@ Given /^a user visits the signin page$/ do
   visit signin_path
 end
 
-When /^the user submits invalid signin credentials$/ do
+When /^the user submits invalid signin information$/ do
   click_button("Sign in")
 end
 
+# Need Bootstrap for this - Use this in Iteration 4 when website overhaul is done
 Then /^the user should see an error message$/ do
   expect(page).to have_selector('div.alert.alert-error')
+end
+
+Then /^the user should see the signin page again$/ do
+  expect(page).to have_content("Sign up now!") 
 end
 
 Given /^the user has an account$/ do
@@ -22,24 +27,31 @@ Given /^the user has an account$/ do
                       password: "foobar", password_confirmation: "foobar")
 end
 
-When /^the user submits valid signin credentials$/ do
+When /^the user submits valid signin information$/ do
 	fill_in "Email",    with: @user.email, match: :first
 	fill_in "Password", with: @user.password, match: :first
 	click_button("Sign in")
 end
 
-Then /^the user should see his or her profile page$/ do
-  expect(page).to have_title(@user.name)
+Then /^I should see my profile page$/ do
+  expect(page).to have_content(@user.name)
 end
 
-Then /^the user should see a signout link$/ do
-  expect(page).to have_link('Sign out', href: signout_path)
+Then /^the user should see a signout tab at navbar$/ do
+  #expect(page).to have_content('Sign Out')
 end
 
-When /^the user press forgot password$/ do
+# For later use
+When /^the user clicks forgot password button$/ do
   click_button("Forgot Password")
 end
 
 Given /^a user visits the forgot password page$/ do
   visit forgotpwd_path
 end
+
+Then /^ the user should see a forgot password form$/ do
+  expect(page).to have_content('Forgot Your Password?')
+  expect(page).to have_content('Please enter your Email Address')
+end
+

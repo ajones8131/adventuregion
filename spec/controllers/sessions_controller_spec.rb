@@ -1,7 +1,9 @@
 require 'rails_helper'
 require 'spec_helper'
 
-RSpec.describe SessionsController, :type => :controller do
+RSpec.describe SessionsController do
+
+	subject { page }
 
 	before do
 		@user = User.new(name: "Group3", email: "group3@example.com",
@@ -10,12 +12,9 @@ RSpec.describe SessionsController, :type => :controller do
 
 	describe "sign in" do 
 
-		let :credentials do 
-			{ :email => 'group3@example.com', :password => 'foobar' }
-		end
-
 		before :each do 
 			visit signin_path
+			signin @user
 		end
 
 		it "Successful user sessions and sign in" do
@@ -25,18 +24,15 @@ RSpec.describe SessionsController, :type => :controller do
 			expect(page).to have_content("#{user.name}")
 		end
 
-		let :credentials do 
-			{ :email => 'group3@example.com', :password => 'wrongpwd' }			
-		end
-
 		before :each do
-			visit signin_path
-			post sign_in, credentials
+			visit "/signin"
+			signin @user
 		end
 
 		it "Unsuccessful user session and sign in" do
+			expect(response).to 
+			response.should_not be_success
 			expect(session[:id]).to eq(nil)
-			expect(page).to have_selector('div.alert.alert-error')
 			expect(page).to have_content('Invalid email/password combination')
 			expect(page).to have_content("Sign In")	
 		end		
@@ -44,14 +40,15 @@ RSpec.describe SessionsController, :type => :controller do
 
 	describe "sign out" do
 		before :each do 
-			sign_in @user
+			visit "/signin"
+			signin @user
 		end
 
 		it "should sign out a user" do
-			delete signout_path
-			get 'signin'
-			expect(response).to be_success
-			expect(page).to have_content("Sign In")			
-		end			
+			delete :destroy
+  			request.original_url.eq signin_path
+			expect(page).to have_content("Sign In")
+			expect(page).to have_content("Sign up now!")
+		end	
 	end
 end

@@ -136,7 +136,7 @@
 		var start = document.getElementById('start').value;
 	  	var selectMode = document.getElementById('selectMode').value;
 	  	var end = end || document.getElementById('end').value;
-	  	var name = name || end.value
+	  	var name = name || end.value;
 	  	//var placeLng = document.getElementById('end').name;
 
 		var request = {

@@ -1,17 +1,16 @@
 module SessionsHelper
 
+  #Signs in the given user
 	def sign_in(user)
+		session[:user_id] = user.id
 	end
 
-	def current_user
-	end
+  # Returns the current signed-in user (if any).
+  def current_user
+    @current_user ||= User.find_by(id: session[:user_id])
+  end
 
-	def signed_in?
-	end
-
-	def sign_out
-	end
-
-	def redirect_back_to( path )
-	end
+  def signed_in?
+    !current_user.nil?
+  end
 end

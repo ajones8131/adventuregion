@@ -17,6 +17,10 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 gem 'cucumber-rails', :require => false, :group => :test
 gem 'database_cleaner'
+
+# generates random information for database testing
+gem 'faker', :github => 'stympy/faker'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -38,8 +42,12 @@ gem 'simplecov', :require => false, :group => :test
 gem 'reek'
 gem 'flog'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+# Use unicorn as the app server 
+#OLD -> DOES NOT PROTECT AGAINST SLOW CLIENT ATTACKS
+#gem 'unicorn'
+
+# Using puma in place of unicorn
+gem 'puma'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -49,4 +57,5 @@ gem 'flog'
 group :test, :development do
   gem "rspec-rails"
   gem 'better_errors'
+  gem "launchy"
 end

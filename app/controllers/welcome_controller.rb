@@ -9,7 +9,7 @@ class WelcomeController < ApplicationController
   end
 
   def get_random
-  	id = rand(1000000) % Place.all.length
-  	return Place.find(id + 1)
+    id = rand(Place.all.length)
+    return Place.find(id + 1)
   end
 end

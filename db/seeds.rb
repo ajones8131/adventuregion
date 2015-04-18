@@ -14,3 +14,13 @@ places = [{:name => 'Pikes Peak',         :placeid => '1', :category => 'Hiking'
 places.each do |place|
   Place.create!(place)
 end
+
+99.times do |n|
+	name = Faker::Name.name
+	email = "randomuser#{n+1}@random.com"
+	password = "foobar"
+	User.create!(name: name,
+				 email: email,
+				 password: password,
+				 password_confirmation: password)
+end
