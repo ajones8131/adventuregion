@@ -24,6 +24,10 @@ RSpec.configure do |config|
 
   config.include Capybara::DSL
   config.include Capybara::RSpecMatchers
+  
+  config.mock_with :rspec do |mocks|
+    mocks.syntax = :should
+  end
 
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
