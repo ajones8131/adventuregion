@@ -151,7 +151,7 @@
 		    }
 	  	});
 
-	  	document.getElementById('message').value = "Routed path to " + name;
+	  	//document.getElementById('message').value = "Routed path to " + name;
 	}
 
 	// Adds listener and calls the initialize
