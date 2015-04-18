@@ -58,4 +58,5 @@ group :test, :development do
   gem "rspec-rails"
   gem 'better_errors'
   gem "launchy"
+  gem 'database_cleaner'
 end
