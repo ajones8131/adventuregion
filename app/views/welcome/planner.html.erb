@@ -7,5 +7,7 @@
   <body>
     <%= render 'Shared/navbar' %>
     <h1>Plan Your Adventure</h1>
-    Adventure stuff
+    <%= 10.times do |i| %>
+    <p><%= Faker::Hacker.say_something_smart%></p>
+    <% end %>
 </html>

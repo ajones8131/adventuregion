@@ -12,7 +12,7 @@ Then /^I should see a signup form$/ do
 end
 
 Then /^I should see my newly created profile page$/ do
-	expect(page).to have_no_content('Log in')
+	expect(page).to have_no_content('Sign In')
 	expect(page).to have_content('Sign Out')
 end
 

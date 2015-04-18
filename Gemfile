@@ -19,7 +19,7 @@ gem 'cucumber-rails', :require => false, :group => :test
 gem 'database_cleaner'
 
 # generates random information for database testing
-gem 'faker'
+gem 'faker', :github => 'stympy/faker'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

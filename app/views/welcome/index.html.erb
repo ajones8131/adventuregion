@@ -36,15 +36,12 @@
       </select>
       <button type="button" onclick="maps:calcRoute();">submit</button>
       <button type="button" onclick="maps:calcRoute('<%= random = get_random(); random.latitude.to_s + ',' + random.longitude.to_s %>', '<%=random.name %>');">Random!</button>
-    </div>
+    </div> 
 
- 
-
-  <!-- This is to store the latlng so maps.js can read the values from index easily
-  <!--     need to fix -->
+  <!-- This is to store the latlng so maps.js can read the values from index easily-->
+  <!--need to fix -->
   <!-- <input id='placeLat' type="text" value="po"/></input\> -->
   <!-- <input id='placeLng' type="text" value=<%=p.longitude%/>/></input\>-->
-
 
     <div id="map-canvas"></div>
     <input id="places-input" class="controls" type="text" placeholder="Search for places">
