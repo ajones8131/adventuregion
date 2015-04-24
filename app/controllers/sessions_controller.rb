@@ -1,3 +1,4 @@
+# Controller for User Sessions during the Sign in/up process.
 class SessionsController < ApplicationController
 
  	def new

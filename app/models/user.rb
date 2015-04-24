@@ -1,3 +1,5 @@
+#Model for User account creation with validation checks and password digest generator.
+
 class User < ActiveRecord::Base
 
 	before_save { self.email = email.downcase }

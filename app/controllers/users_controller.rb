@@ -1,3 +1,4 @@
+# User Controller for the Databases populated with Users and Signup Process.
 class UsersController < ApplicationController
 	def new
   		@user = User.new

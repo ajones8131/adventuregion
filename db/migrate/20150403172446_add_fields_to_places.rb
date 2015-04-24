@@ -1,3 +1,5 @@
+# Database migration that adds the Name, Placeid, Type, Price and Popularity Column to the Place Database.
+
 class AddFieldsToPlaces < ActiveRecord::Migration
   def change
     add_column :places, :name, :string
