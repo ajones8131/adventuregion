@@ -1,3 +1,5 @@
+# Place Controller for the Databases populated with places/locations.
+
 class PlaceController < ApplicationController
 
   def index
@@ -20,7 +22,13 @@ class PlaceController < ApplicationController
   end
 
 	def show
-		@place = Place.find(params[:id]) # look up place by unique ID
+    # Andrew: Old Code Before Reek: PlaceController#filtering_params refers to params more than self (FeatureEnvy)
+    # id = params[:id]
+		# @place = Place.find(params[:id]) # look up place by unique ID
+
+    # New code for Reek
+    id = params[:id]
+    @place = Place.find(id) # look up place by unique ID
 	end
 
   def create
