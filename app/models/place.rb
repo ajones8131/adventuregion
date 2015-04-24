@@ -3,18 +3,18 @@ class Place < ActiveRecord::Base
   scope :price, -> (price) { where price: price }
   scope :popularity, -> (popularity) { where popularity: popularity }
 
-  def self.getCategories
+  def self.get_categories
     categories = Set.new
     self.all.each do |place|
       categories << place.category
   end
   categories.to_a
   end
-  def self.getPrice
+  def self.get_price
     return ['Free', 'Low', 'Medium', 'High']
   end
 
-  def self.getPopularity
+  def self.get_popularity
     return ['Free', 'Low', 'Medium', 'High']
   end
 end

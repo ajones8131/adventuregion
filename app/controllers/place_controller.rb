@@ -1,25 +1,25 @@
 class PlaceController < ApplicationController
 
   def index
-    ordering, @type_header = {:category => :asc}, 'hilite'
-    @places = Place.order(ordering)
+    #ordering, @type_header = {:category => :asc}, 'hilite'
+    #@places = Place.order(ordering)
+    @places = Place.all
 
-    @allCategories = Place.getCategories
-    @allPrices = Place.getPrice
-    @allPopularities = Place.getPopularity
+    index_information
+    
 
-    # @places = @places.category(params[:category]) if params[:category].present?
-    # @places = @places.price(params[:price]) if params[:price].present?
-    # @places = @places.popularity(params[:popularity]) if params[:popularity].present?
-
-    filtering_params(params).each do |key, value|
+    params.slice(:category, :price, :popularity).each do |key, value|
       @places = @places.public_send(key, value)if value.present?
     end
-    # @places = Place.where(category: @selectedCategory.keys, price: @selectedPrice.keys).order(ordering)
+  end
+
+  def index_information
+    @all_categories = Place.get_categories
+    @all_prices = Place.get_price
+    @all_popularities = Place.get_popularity
   end
 
 	def show
-    id = params[:id]
 		@place = Place.find(params[:id]) # look up place by unique ID
 	end
 
@@ -55,8 +55,8 @@ class PlaceController < ApplicationController
   end
 
   #private
-  def filtering_params(params)
-    params.slice(:category, :price, :popularity)
-  end
+  #def filtering_params(params)
+  #  params.slice(:category, :price, :popularity)
+  #end
 
 end
