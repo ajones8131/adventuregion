@@ -3,9 +3,8 @@
 class PlaceController < ApplicationController
 
   def index
-    #ordering, @type_header = {:category => :asc}, 'hilite'
-    #@places = Place.order(ordering)
-    @places = Place.all
+    ordering, @type_header = {:category => :asc}, 'hilite'
+    @places = Place.order(ordering)
 
     index_information
     

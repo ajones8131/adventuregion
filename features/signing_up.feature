@@ -6,6 +6,7 @@ Feature: Signing up for an account to AdventuRegion to save adventures
 
   Scenario: Successful signup
 	Given I am on the home page
+	Then show me the page
 	When I click "Sign in"
 	Then I should see a sign up link at bottom
 	When I click "Sign up now!"

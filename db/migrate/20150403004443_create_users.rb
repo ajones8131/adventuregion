@@ -6,11 +6,11 @@ class CreateUsers < ActiveRecord::Migration
  	def change
 		create_table "users", force: true do |table|
 	    	table.string   "name"
-	    	table.string   "email"
-	   	 	table.datetime "created_at"
-	    	table.datetime "updated_at"
-	    	table.string   "password_digest"
-	    	table.string   "remember_digest"
+	    	#table.string   "email"
+	   	 	#table.datetime "created_at"
+	    	#table.datetime "updated_at"
+	    	#table.string   "password_digest"
+	    	#table.string   "remember_digest"
     	end
     end
 end

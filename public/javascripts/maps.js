@@ -132,11 +132,11 @@
 	}
 
 	// Calculate the route from start location to end location
-	function calcRoute(end, name) {
+	function calcRoute(end) {
 		var start = document.getElementById('start').value;
 	  	var selectMode = document.getElementById('selectMode').value;
-	  	var end = end || document.getElementById('end').value;
-	  	var name = name || end.value;
+	  	var end = end ||  document.getElementById('end').value;
+	  	//var name = name || end.value;
 	  	//var placeLng = document.getElementById('end').name;
 
 		var request = {
