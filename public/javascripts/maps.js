@@ -35,7 +35,7 @@
 
 	    directionsDisplay.setMap(map);
 
-	    var defaultBounds = new google.maps.LatLngBounds(
+	    /*var defaultBounds = new google.maps.LatLngBounds(
 	        new google.maps.LatLng(UCCSLat, UCCSLng)
 	    );
 
@@ -47,7 +47,7 @@
 	    }
 
 	    var markers = [];
-	    input = document.getElementById('places-input');
+	    input = document.getElementById('places-input');*/
 
 	    // Location of Search Box
 	    //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
@@ -89,10 +89,10 @@
 	    	map.fitBounds(bounds);
 	    });*/
 
-	    infowindow = new google.maps.InfoWindow();
+	    /*infowindow = new google.maps.InfoWindow();
 	    var service = new google.maps.places.PlacesService(map);
 	    service.nearbySearch(request, callbackPlaces);
-	    predictService.getQueryPredictions({input: input}, callbackPredictions);
+	    predictService.getQueryPredictions({input: input}, callbackPredictions);*/
 
 	    // Bias the SearchBox results towards places that are within the bounds of the
 	    // current map's viewport.
