@@ -11,27 +11,27 @@
     <div id="wrapper">
       <div id="sidebar">
         <form id="filter_form" method="get" action="/place" accept-charset="UTF-8">
-        <select name="category" form="filter_form">
+        <select name="category" form="filter_form" class="sidebar">
           <option value=''>Select a Category</option>
           <% @all_categories.each do |type| %>
             <option value='<%= type %>'><%= type %></option>
           <% end %>
         </select>
 
-        <select name="price" form="filter_form">
+        <select name="price" form="filter_form" class="sidebar">
           <option value=''>Select a Price</option>
           <% @all_prices.each do |value| %>
             <option value='<%= value %>'><%= value %></option>
           <% end %>
         </select>
 
-        <select name="popularity" form="filter_form">
+        <select name="popularity" form="filter_form" class="sidebar">
           <option value=''>Select Popularity</option>
           <% @all_popularities.each do |value| %>
             <option value='<%= value %>'><%= value %></option>
           <% end %>
         </select>
-          <input type="submit" value="Filter"></input>
+          <input type="submit" class="sidebar" id="submit" value="Filter"></input>
         </form>
         <br><a href="/place/create">Add a place</a>
       </div>
