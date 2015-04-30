@@ -172,7 +172,7 @@ a.navbar:hover, a.navbar:active {
 	border-bottom: none; 
 }
 
-select, #start, #submit {
+.sidebar {
 	width: 100%;
 	height: 25px;
 	padding: 0;

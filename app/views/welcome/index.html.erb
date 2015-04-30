@@ -11,20 +11,20 @@
     <%= render "/Shared/navbar" %>
     <div id="wrapper">
       <div id="sidebar">
-        <input id='start' name="start" type="text" placeholder="Start Location"></input>
+        <input id='start' name="start" class="sidebar" type="text" placeholder="Start Location"></input>
       <!--<input id='end' type="text" placeholder="End Location"></input>-->
-      <select id='end'>
+      <select id='end' class="sidebar">
         <% @places.each do |p| %>
             <option value='<%= p.latitude.to_s + "," + p.longitude.to_s %>'><%= p.name %></option>
         <% end %>
       </select>
-      <select id='selectMode'>
+      <select id='selectMode' class="sidebar">
           <option value="DRIVING">Driving</option>
           <option value="WALKING">Walking</option>
           <option value="BICYCLING">Bicycling</option>
           <option value="TRANSIT">Transit</option>
       </select>
-      <button id="submit" type="button" onclick="maps:calcRoute();">Get Directions</button> 
+      <button id="submit" class="sidebar" type="button" onclick="maps:calcRoute();">Get Directions</button> 
       </div>
       <!--<input id="places-input" class="controls" type="text" placeholder="Search for places">-->
       <div id="map-canvas"></div>

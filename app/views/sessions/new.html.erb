@@ -15,13 +15,16 @@
       <div id="mainContent">
           <%= form_for(:session, url: signin_path) do |f| %>
 
-          <%= f.label :email, "Email"  %>
-          <%= f.email_field :email, class: 'form-control' %>
+          
+          <%= f.email_field :email, class: 'form-control', placeholder: "Email"%>
+          <br>
 
-          <%= f.label :password, "Password"  %>
-          <%= f.password_field :password, class: 'form-control' %>
+          
+          <%= f.password_field :password, class: 'form-control', placeholder: "password" %>
+          <br>
 
           <%= f.submit "Sign in", class: "btn btn-primary"  %> 
+          <br><br>
             
           <p> New User? <%= link_to("Sign up now!", signup_path) %> </p>  
           <% end %> 

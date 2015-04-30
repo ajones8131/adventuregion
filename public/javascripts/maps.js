@@ -25,7 +25,7 @@
 
 		var mapOptions = {
 			center: new google.maps.LatLng(UCCSLat, UCCSLng),
-			zoom: 13,
+			zoom: 15,
 			mapTypeID: google.maps.MapTypeId.ROADMAP
 		};
 
