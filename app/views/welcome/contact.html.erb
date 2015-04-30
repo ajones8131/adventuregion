@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html>
- <head>
+  <head>
     <title>AdventuRegion</title>
-    <%= stylesheet_link_tag "index.css" %>
+    <%= stylesheet_link_tag "main.css" %>
   </head>
-  <body>
+  <body> 
+    <div id="title"> Contact Info </div> 
     <%= render 'Shared/navbar' %>
-    <h1>Contact Info</h1>
-    Random Contact Info goes here.
     
-    <%= 10.times do |i| %>
-    <p><%= Faker::Hacker.say_something_smart%></p>
-    <% end %>
- </body>
+    <div id="wrapper">
+      <div id="sidebar">
+
+      </div>
+      <div id="mainContent">
+        <%= 10.times do |i| %>
+            <p><%= Faker::Hacker.say_something_smart%></p>
+        <% end %>
+      </div>
+    </div>
+    <div id="footer"></div>
+  </body>
 </html>
