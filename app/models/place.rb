@@ -17,6 +17,6 @@ class Place < ActiveRecord::Base
   end
 
   def self.get_popularity
-    return ['Free', 'Low', 'Medium', 'High']
+    return ['Low', 'Medium', 'High']
   end
 end
