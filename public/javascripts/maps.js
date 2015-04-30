@@ -50,11 +50,11 @@
 	    input = document.getElementById('places-input');
 
 	    // Location of Search Box
-	    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+	    //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-	    var searchBox = new google.maps.places.SearchBox(input);
+	    //var searchBox = new google.maps.places.SearchBox(input);
 
-	    google.maps.event.addListener(searchBox, 'places_changed', function() {
+	    /*google.maps.event.addListener(searchBox, 'places_changed', function() {
 	        var places = searchBox.getPlaces();
 
 	        if (places.length == 0) {
@@ -87,7 +87,7 @@
 			}
 
 	    	map.fitBounds(bounds);
-	    });
+	    });*/
 
 	    infowindow = new google.maps.InfoWindow();
 	    var service = new google.maps.places.PlacesService(map);

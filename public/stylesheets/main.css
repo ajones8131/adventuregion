@@ -130,7 +130,7 @@ a.navbar:hover, a.navbar:active {
 	max-width: 600px;
 } 
 #placetable {
-	font: normal 12px/150% Arial, Helvetica, sans-serif; 
+	font: normal 12px/150% Arial, sans-serif; 
 	background: #E4F1FE; 
 	overflow: hidden; 
 	border: 1px solid #2c3e50;  
@@ -170,4 +170,14 @@ a.navbar:hover, a.navbar:active {
 }
 #placetable table tbody tr:last-child td { 
 	border-bottom: none; 
+}
+
+select, #start, #submit {
+	width: 100%;
+	height: 20px;
+	padding: 0;
+	margin: 1px 0 1px 0;
+	border: none;
+	font: 15px bold Arial, sans-serif;
+	background-color: #ecf0f1;
 }
