@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
- <head>
+  <head>
     <title>AdventuRegion</title>
-    <%= stylesheet_link_tag "index.css" %>
+    <%= stylesheet_link_tag "main.css" %>
   </head>
-  <body>
+  <body> 
+    <div id="title"> About </div> 
     <%= render 'Shared/navbar' %>
-    <h1>About</h1>
-    Random Derp
-
-    <%= 10.times do |i| %>
-    <p><%= Faker::Hacker.say_something_smart%></p>
-    <% end %>
+    
+    <div id="wrapper">
+      <div id="sidebar">
+        
+      </div>
+      <div id="mainContent">
+        <%= 10.times do |i| %>
+            <p><%= Faker::Hacker.say_something_smart%></p>
+        <% end %>
+      </div>
+    </div>
+    <div id="footer"></div>
+  </body>
 </html>

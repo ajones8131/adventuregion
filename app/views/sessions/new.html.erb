@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sign in</title>
-    <%= stylesheet_link_tag "index.css" %>
+    <title>AdventuRegion</title>
+    <%= stylesheet_link_tag "main.css" %>
   </head>
-  <body>
+  <body> 
+    <div id="title"> Sign In </div> 
     <%= render 'Shared/navbar' %>
-    <h1>Sign in</h1>
-    <div class = "row">
-      <div class = "col-md-6 col-md-offset-3">
-        <%= form_for(:session, url: signin_path) do |f| %>
+    
+    <div id="wrapper">
+      <div id="sidebar">
+
+      </div>
+      <div id="mainContent">
+          <%= form_for(:session, url: signin_path) do |f| %>
 
           <%= f.label :email, "Email"  %>
           <%= f.email_field :email, class: 'form-control' %>
@@ -20,8 +24,9 @@
           <%= f.submit "Sign in", class: "btn btn-primary"  %> 
             
           <p> New User? <%= link_to("Sign up now!", signup_path) %> </p>  
-        <% end %> 
+          <% end %> 
       </div>
     </div>
+    <div id="footer"></div>
   </body>
 </html>
