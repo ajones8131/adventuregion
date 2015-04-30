@@ -174,10 +174,15 @@ a.navbar:hover, a.navbar:active {
 
 select, #start, #submit {
 	width: 100%;
-	height: 20px;
+	height: 25px;
 	padding: 0;
 	margin: 1px 0 1px 0;
 	border: none;
-	font: 15px bold Arial, sans-serif;
+	font: normal 15px Arial, sans-serif;
 	background-color: #ecf0f1;
+}
+
+#submit:hover {
+	background-color: #34495e;
+	color: #ecf0f1;
 }
