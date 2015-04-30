@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>AdventuRegion</title>
-    <%= stylesheet_link_tag "index.css" %>
+    <%= stylesheet_link_tag "main.css" %>
   </head>
-    <body>
-      <%= render 'Shared/navbar' %>
+  <body> 
+    <div id="title"> Edit <%= @place.name %> </div> 
+    <%= render 'Shared/navbar' %>
+    
+    <div id="wrapper">
+      <div id="sidebar">
 
-      <h1>Edit <%= @place.name %></h1>
-
-      <form accept-charset="UTF-8" action="/place/<%= params[:id] %>" class="edit_place" id="edit_place" method="post">
+      </div>
+      <div id="mainContent">
+               <form accept-charset="UTF-8" action="/place/<%= params[:id] %>" class="edit_place" id="edit_place" method="post">
         <input name="utf8" type="hidden" value="&#x2713;" />
         <input type="hidden" name="_method" value="put" />
         <input name="authenticity_token" type="hidden" value=<%= form_authenticity_token %> />
@@ -37,7 +41,8 @@
 
         <input name="commit" type="submit" value="Update Place"><br>
       </form>
-      
-    <a href="/place/index"> Return to Places </a><br>
+      </div>
+    </div>
+    <div id="footer"></div>
   </body>
 </html>
